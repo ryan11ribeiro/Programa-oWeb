@@ -40,6 +40,10 @@
     </div>
 
 <?php
+
+   $nome = "";
+   $email = "";
+   $msg = "";
    
 
     if(isset($_GET['nome']) && isset ($_GET['email']) && isset( $_GET['msg'])){
@@ -64,5 +68,14 @@
 
     }
 
+    $conexao = mysqli_connect("localhost","ryan","testebizarro");
 
-    #Oii, porfessor. Tá aparecendo o Warning como variavéis não definidas, mas eu não soube como resolver
+    if($conexao){
+        echo "Conexão estabelecida!!";
+    }
+    else{
+        echo "Erro na conexão";
+    }
+
+    mysqli_select_db($conexao, "teste");
+    mysqli_query($conexao, "INSERT INTO `contatos`( `NOME`, `EMAIL`, `MENSAGEM`) VALUES ('$nome','$email','$msg') ");
