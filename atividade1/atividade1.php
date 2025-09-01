@@ -7,7 +7,7 @@
 
             for ($i = 1; $i <= 10; $i ++){
 
-                $valor = $num*  $i;
+                $valor = $num * $i;
 
 
                 $resultado .= " $num * $i = $valor <br>";
@@ -34,5 +34,6 @@
         $linha =fgets($arquivo);
         echo "$linha \n";
     }
+
 
         
